@@ -1,0 +1,42 @@
+{% load static %}
+{% load widget_tweaks %}
+
+
+<h3>https://www.youtube.com/watch?v=W_KBzgrCvss</h3>
+<h3>https://github.com/jazzband/django-widget-tweaks</h3>
+
+<form action="{% url 'contact' %}">
+    {% csrf_token %}
+
+    {% render_field contact_form.name placeholder="Ваше имя" class="myclass onemoreclass" %}
+
+    <br>
+    <br>
+
+    {% render_field contact_form.phone placeholder="Ваш телефон" %}
+
+    <br>
+    <br>
+
+    {% render_field contact_form.email placeholder="Ваш email" %}
+
+    <br>
+    <br>
+
+    {% render_field contact_form.message placeholder="Ваше сообщение" %}
+
+    <br>
+    <br>
+    <button>Отправить</button>
+</form>
+
+<style>
+    .isValid {
+        border: 4px solid green;
+    }
+    .isInvalid {
+        border: 4px solid red;
+    }
+</style>
+
+<script src="{% static 'base/js/common.js' %}"></script>
